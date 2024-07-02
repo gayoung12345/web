@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./page/HomePage";
+import ArtFair1Page from "./page/ArtFair1Page";
+import ArtFair2Page from "./page/ArtFair2Page";
+import ArtFairListPage from "./page/ArtFairListPage";
+import ContactUsPage from "./page/ContactUsPage";
+import RegisterPage from "./page/RegisterPage";
+import Layout from "./Layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/diaf1" element={<ArtFair1Page />} />
+        <Route path="/diaf2" element={<ArtFair2Page />} />
+        <Route path="/diaflist" element={<ArtFairListPage />} />
+        <Route path="/contactus" element={<ContactUsPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </Layout>
   );
 }
 
